@@ -2,11 +2,20 @@
 <manifest>
   <include name="default.xml"/>
 
-  <remote fetch="https://code.qt.io/yocto" name="qt6"/>
+  <remote name="qt6" fetch="https://code.qt.io/yocto"/>
+  <remote name="poky_boot2qt" fetch="https://git.yoctoproject.org"/>
+  <remote name="oe_boot2qt" fetch="https://github.com/openembedded"/>
+  <remote name="kraj_boot2qt" fetch="https://github.com/kraj"/>
 
   <remove-project name="meta-qt6"/>
+  <remove-project name="poky"/>
+  <remove-project name="meta-openembedded"/>
+  <remove-project name="meta-clang"/>
 
   <project name="meta-boot2qt" path="sources/meta-boot2qt" remote="qt6" revision="scarthgap"/>
   <project name="meta-mingw" path="sources/meta-mingw" remote="yp" revision="refs/tags/yocto-5.0"/>
   <project name="meta-qt6" path="sources/meta-qt6" remote="qt6" revision="refs/tags/v6.8.1"/>
+  <project name="poky" remote="poky_boot2qt" path="sources/poky" revision="refs/tags/yocto-5.0.4" upstream="scarthgap"/>
+  <project name="meta-openembedded" remote="oe_boot2qt" path="sources/meta-openembedded" revision="72018ca1b1a471226917e8246e8bbf9a374ccf97" upstream="scarthgap"/>
+  <project name="meta-clang" remote="kraj_boot2qt" path="sources/meta-clang" revision="2b7433611d80f6d0ee1b04156fa91fc73d3c2665" upstream="scarthgap"/>
 </manifest>
